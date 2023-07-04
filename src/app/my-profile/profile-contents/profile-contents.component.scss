@@ -1,0 +1,18 @@
+.btn-menu {
+    height: 50px; 
+    width: 154px; 
+    border-radius: 10px;
+    color: white;
+    background-color: var(--button);
+    transition: background-color 250ms linear;
+    cursor: pointer;
+}
+
+.btn-menu:disabled {
+    color: white;
+    background-color: rgb(71, 73, 84);
+}
+
+.btn-menu:hover {
+    background-color: #b1b1b1;
+}

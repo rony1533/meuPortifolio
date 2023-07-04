@@ -1,0 +1,10 @@
+<div class="flex justify-content-around" style="background-color: var(--primary); padding: 6.85px 6.5px 6.85px 6.5px; margin-top: 30px; border-radius: 10px;">
+  <button class="btn-menu" [disabled]="isActiveProtifolio" (click)="activePortifolio()">{{isPortuguese? 'Portfólio ': 'Portfolio'}}</button>
+  <button class="btn-menu" [disabled]="isActiveSkills" (click)="activeSkills()">{{isPortuguese? 'Habilidades': 'Skills'}}</button>
+</div>
+
+<div style="padding: 6.85px 6.5px 6.85px 6.5px;">
+  <app-profile-portifolio [isShowPortifolio]="isActiveProtifolio"></app-profile-portifolio>
+
+  <app-profile-skills [isShowSkills]="isActiveSkills"></app-profile-skills>
+</div>

@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+  --primary: #FFF;
+  --secondary: #c0c0c0;
+  --body: #E9EBEC;
+  --text-title: #3D3D3D;
+  --text-body: #575757;
+  --button: #efefef;
+}
+
+:root .dark-theme {
+  --primary: #171F26;
+  --secondary: #2c3033;
+  --body: #0C151D;
+  --text-title: #F1F2F4;
+  --text-body: #A3ABB2;
+  --button: #1f2a35;
+}
+
+body {
+  background-color: var(--body);
+  transition: background-color 250ms;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-title);
+}
+
+p {
+  color: var(--text-body);
+  font-size: 14px;
+}
+
+.btn-mode {
+  background-color: var(--primary);
+}

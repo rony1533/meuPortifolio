@@ -1,0 +1,27 @@
+.card-image {
+  width: 124px; 
+  height: 124px; 
+  margin-bottom: 40px; 
+  background-color: #ffffff00; 
+  border: 4px solid #71DDFF; 
+  border-radius: 60px;
+
+  animation: borderChange 5s infinite ease-in-out;
+  filter: hue-rotate(360deg);
+
+}
+
+@keyframes borderChange {
+  0% {
+    border: 4px solid #71DDFF;
+  }
+  25% {
+    border: 4px solid #7171ff;
+  }
+  50% {
+      border: 4px solid #af71ff;
+  }
+  75% {
+    border: 4px solid #7171ff;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="mt-2">
+  <p *ngIf="isPortuguese">Olá a todos! Eu criei esta página web para apresentar meu portfólio e minhas experiências como desenvolvedor ao longo da minha carreira nessa área. Espero que gostem.</p>
+  <p *ngIf="!isPortuguese">Hello everyone! I created this webpage to showcase my portfolio and my experiences as a developer throughout my career in this field. I hope you like it.</p>
+</div>
+
+<div class="grid flex justify-content-center text-center gap-4 mt-2">
+
+  <div class="col">
+    <p style="size: 16px; font-weight: bold; color: var(--text-title);">{{yearWork + (this.isPortuguese? ' Anos ':' Years ') + monthWork + (isPortuguese? ' Mês':' Month')}}</p>
+    <p *ngIf="isPortuguese">Tempo no mercado de trabalho</p>
+    <p *ngIf="!isPortuguese">Time in the job market</p>
+  </div>
+
+  <div class="col">
+    <p style="size: 16px; font-weight: bold; color: var(--text-title);">{{doneProject}}</p>
+    <p *ngIf="isPortuguese">Projetos realizado</p>
+    <p *ngIf="!isPortuguese">Projects done</p>
+  </div>
+
+  <div class="col">
+    <p style="size: 16px; font-weight: bold; color: var(--text-title);">{{personalProject}}</p>
+    <p *ngIf="isPortuguese">Projetos pessoais</p>
+    <p *ngIf="!isPortuguese">Personal projects</p>
+  </div>
+
+</div>
