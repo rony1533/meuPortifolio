@@ -1,10 +1,18 @@
-<div class="flex justify-content-around" style="background-color: var(--primary); padding: 6.85px 6.5px 6.85px 6.5px; margin-top: 30px; border-radius: 10px;">
-  <button class="btn-menu" [disabled]="isActiveProtifolio" (click)="activePortifolio()">{{isPortuguese? 'Portfólio ': 'Portfolio'}}</button>
-  <button class="btn-menu" [disabled]="isActiveSkills" (click)="activeSkills()">{{isPortuguese? 'Habilidades': 'Skills'}}</button>
+<div class="flex justify-content-between align-items-center	px-3" style="background-color: var(--primary); padding: 6.85px 6.5px 6.85px 6.5px; margin-top: 30px; border-radius: 10px;">
+
+  <h3>{{isPortuguese? 'Portfólio ': 'Portfolio'}}</h3>
+
+  <p-multiSelect [options]="groupedFilter" [group]="true"  defaultLabel="Filtrar" scrollHeight="250px">
+    <ng-template let-group pTemplate="group">
+        <div class="flex align-items-center">
+            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
+            <span>{{ group.label }}</span>
+        </div>
+    </ng-template>
+</p-multiSelect>
+
 </div>
 
 <div style="padding: 6.85px 6.5px 6.85px 6.5px;">
-  <app-profile-portifolio [isShowPortifolio]="isActiveProtifolio"></app-profile-portifolio>
-
-  <app-profile-skills [isShowSkills]="isActiveSkills"></app-profile-skills>
+  <app-profile-portifolio></app-profile-portifolio>
 </div>

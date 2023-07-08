@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SelectItemGroup } from 'primeng/api';
 
 @Component({
   selector: 'app-profile-contents',
@@ -15,9 +16,38 @@ export class ProfileContentsComponent implements OnInit {
   btnPortifolioStyle = "";
   btnSkillStyle="";
 
+
+  groupedFilter!: SelectItemGroup[];
+
   constructor() { }
 
   ngOnInit() {
+    this.groupedFilter = [
+      {
+          label: 'Linguagens',
+          value: 'language',
+          items: [
+              { label: 'Java', value: 'java' },
+              { label: 'JavaScript', value: 'javascript' },
+          ]
+      },
+      {
+          label: 'Bibliotecas',
+          value: 'lib',
+          items: [
+              { label: 'Bootstrap', value: 'bootstrap' },
+              { label: 'NgPrime', value: 'ngprime' }
+          ]
+      },
+      {
+          label: 'Frameworks',
+          value: 'framework',
+          items: [
+              { label: 'Angular', value: 'angular' },
+              { label: 'React', value: 'react' }
+          ]
+      }
+  ];
   }
 
   activePortifolio() {
@@ -29,5 +59,7 @@ export class ProfileContentsComponent implements OnInit {
     this.isActiveSkills = true;
     this.isActiveProtifolio = false;
   }
+
+
 
 }

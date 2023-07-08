@@ -8,8 +8,6 @@ import { Portfolio as Portfolio } from '../../model/portifolio.model';
 })
 export class ProfilePortifolioComponent implements OnInit {
 
-  @Input() isShowPortifolio: boolean = false;
-
   itemData: Portfolio[] = []
 
   constructor() { }
@@ -17,14 +15,14 @@ export class ProfilePortifolioComponent implements OnInit {
   ngOnInit() {
 
     this.itemData.push(
-      {title: 'Calculadora', imageUrl: 'https://wallpaperaccess.com/full/8091895.jpg', linkHref: 'https://github.com/rony1533', 
+      {title: 'Calculadora Simples', imageUrl: '../../../assets/calculadora-simples.png', linkHref: 'https://github.com/rony1533/Calculadora-simples', 
         technologiesUsed: [
-          {name: 'HTML', icon: '../../../assets/html.png'}, {name: 'Angular framework', icon: '../../../assets/angular.png'}
+          {name: 'HTML', icon: '../../../assets/html.png'}, {name: 'CSS', icon: '../../../assets/css.png'}, {name: 'JavaScript', icon: '../../../assets/js.png'}
         ]
       },
-      {title: 'Teste 2', imageUrl: 'https://wallpaperaccess.com/full/8091895.jpg', linkHref: 'https://github.com/rony1533', 
+      {title: 'Transforma texto', imageUrl: '../../../assets/transforma-texto.png', linkHref: 'https://github.com/rony1533/Transforma-Texto', 
         technologiesUsed: [
-          {name: 'HTML', icon: '../../../assets/html.png'}, {name: 'Angular framework', icon: '../../../assets/angular.png'}
+          {name: 'HTML', icon: '../../../assets/html.png'}, {name: 'CSS', icon: '../../../assets/css.png'}, {name: 'JavaScript', icon: '../../../assets/js.png'}
         ]
       })
   }

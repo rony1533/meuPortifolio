@@ -1,10 +1,10 @@
-<div *ngIf="isShowPortifolio" class="mt-1">
+<div class="mt-1">
 
   <div class="flex flex-column" *ngFor="let item of itemData">
     
     <div class="flex flex-column mb-4" style="height: 250px;">
 
-      <div class="border-round-top" style="background-color: var(--primary); height: 80%; ">
+      <div class="border-round-top" style="background-color: var(--primary); height: 80%;" pTooltip="Clique aqui para acessar o repositório no GitHub.">
         <a href="{{item.linkHref}}" target="_blank">
           <img class="w-full h-full border-round-top" src="{{item.imageUrl}}" alt="{{item.title}}">
         </a>
