@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SelectItemGroup } from 'primeng/api';
+import { ProfilePortifolioComponent } from './profile-portifolio/profile-portifolio.component';
 
 @Component({
   selector: 'app-profile-contents',
@@ -16,8 +17,9 @@ export class ProfileContentsComponent implements OnInit {
   btnPortifolioStyle = "";
   btnSkillStyle="";
 
-
   groupedFilter!: SelectItemGroup[];
+
+  portifolioComponente: ProfilePortifolioComponent = new ProfilePortifolioComponent;
 
   constructor() { }
 
@@ -60,6 +62,8 @@ export class ProfileContentsComponent implements OnInit {
     this.isActiveProtifolio = false;
   }
 
-
+  selectedFilter(param: any) {
+    this.portifolioComponente.filterSelected(param.value);
+  }
 
 }
