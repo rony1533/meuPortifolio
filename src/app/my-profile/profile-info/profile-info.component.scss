@@ -7,8 +7,6 @@
   border-radius: 60px;
 
   animation: borderChange 5s infinite ease-in-out;
-  filter: hue-rotate(360deg);
-  cursor: pointer;
 }
 
 @keyframes borderChange {
