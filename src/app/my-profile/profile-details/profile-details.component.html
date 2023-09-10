@@ -4,7 +4,7 @@
     <span>{{isPortuguese?'Baixar Currículo':'Download CV'}}</span>
     <i class="pi pi-download" style="margin-left: 7px;"></i>
   </button>
-  <button  class="flex justify-content-center align-items-center shadow-2">
+  <button  class="flex justify-content-center align-items-center shadow-2" (click)="sendEmail()">
     <span>{{ isPortuguese?'Contato':'Contact'}}</span>
     <i class="pi pi-send" style="margin-left: 7px;"></i>
   </button>

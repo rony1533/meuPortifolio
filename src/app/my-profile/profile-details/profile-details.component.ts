@@ -11,10 +11,13 @@ export class ProfileDetailsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   downloadCv() {
-    window.open('../../../assets/CV.docx.pdf'); 
+    window.open('https://drive.google.com/file/d/1GAMqqcGVywmfpA_Ko5p664G4AsFRq9OX/view?usp=drive_link'); 
+  }
+
+  sendEmail() {
+    window.open('mailto:rony.alvessobral@hotmail.com.br');
   }
 }

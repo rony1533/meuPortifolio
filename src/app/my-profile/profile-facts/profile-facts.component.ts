@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MockPortfolio } from '../dataMock/portfolioMock';
 
 @Component({
   selector: 'app-profile-facts',
@@ -12,13 +13,12 @@ export class ProfileFactsComponent implements OnInit {
   yearWork: string = '';
   monthWork: string = '';
   doneProject: number = 0;
-  personalProject: number = 0;
 
   constructor() { }
 
   ngOnInit() {
 
-
+    this.doneProject = MockPortfolio.length;
     this.calculatedWorkExperience();
   }
 
@@ -27,7 +27,7 @@ export class ProfileFactsComponent implements OnInit {
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const workExperience = (Number(date.getFullYear() + '' + month) - 202106).toString();
 
-    this.yearWork =  `${workExperience.slice(0,1)}`; 
+    this.yearWork = `${workExperience.slice(0,1)}`; 
     this.monthWork = `${Number(workExperience.slice(1,3))}`;
   }
 

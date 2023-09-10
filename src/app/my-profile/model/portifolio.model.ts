@@ -7,5 +7,5 @@ export interface Portfolio {
 
 interface TechnologiesUsed {
     name: string;
-    icon: string;
+    // icon: string;
 }

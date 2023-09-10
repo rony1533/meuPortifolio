@@ -7,11 +7,31 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  @Input() isPortuguese: boolean = false;
+  isLight: boolean = false;
+  isPortuguese: boolean = false;
+
+  ngOnInit(): void {
+    this.changeMode();
+  }
 
   constructor() { }
 
-  ngOnInit() {
+  changeMode() {
+    document.body.classList.toggle('dark-theme')
+    this.isLight =!this.isLight;
   }
 
+  changeLanguage(param: string) {
+    switch(param) {
+      case 'eng':
+        this.isPortuguese = false;
+        break;
+      case 'pt':
+        this.isPortuguese = true;
+        break;
+      default:
+        this.isPortuguese = true;
+        break;
+    }
+  }
 }

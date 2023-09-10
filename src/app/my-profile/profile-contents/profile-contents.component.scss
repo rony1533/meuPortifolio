@@ -16,3 +16,11 @@
 .btn-menu:hover {
     background-color: #b1b1b1;
 }
+
+:host  ::ng-deep .p-multiselect {
+    background-color: var(--button) !important;
+    color: white;
+    border: none;
+    max-width: 200px;
+    text-align: start;
+  } 

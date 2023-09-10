@@ -18,3 +18,18 @@
     
 }
 
+.card-h {
+  height: 250px;
+}
+
+@media only screen and (max-width: 900px) {
+  .card-h {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card-h {
+    height: 200px;
+  }
+}

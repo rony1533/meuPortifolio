@@ -1,17 +1,1 @@
-<div class="main">
-  <div class="content">
-    <div class="flex justify-content-end">
-        <button class="btn-mode shadow-3 mr-2 {{!isPortuguese? 'activeButton':''}}" (click)="changeLanguage('eng')" style="line-height: 0 !important;" [disabled]="!isPortuguese">
-          <img src="../assets/eua.png" alt="" style="height: 30px;">
-        </button>
-        <button class="btn-mode shadow-3 {{isPortuguese? 'activeButton':''}}" (click)="changeLanguage('pt')" style="line-height: 0 !important;" [disabled]="isPortuguese">
-          <img src="../assets/br.png" alt="" style="height: 30px;">
-        </button>
-        <button class="btn-mode shadow-3 ml-4" (click)="changeMode()" style="line-height: 0 !important;">
-          <i [ngClass]="isLight? 'icon-light pi pi-moon':'icon-dark pi pi-sun'"></i>
-        </button>
-    </div>
-
-  <app-my-profile [isPortuguese]="isPortuguese"></app-my-profile>
-  </div>
-</div>
+<router-outlet></router-outlet>

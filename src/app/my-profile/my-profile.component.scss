@@ -1,0 +1,49 @@
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 0px 17.5px 0 17.5px;
+    height: 100vh;
+  }
+  
+  .content {
+    text-align: center; 
+    margin-bottom: 30px;  
+    width: 1020px;
+  }
+  
+  .btn-mode {
+      height: 48px;
+      width: 48px;
+      border: none;
+      border-radius: 30px !important;
+      margin-top: 20px;
+      cursor: pointer;
+  
+      i {
+        font-size: 1.5rem;
+      }
+  }
+  
+  .icon-light {
+    color: #3D3D3D;
+    transition: linear color 500ms;
+  }
+  
+  .icon-light:hover {
+    color: #666565;
+    transition: linear 250ms;
+  }
+  
+  .icon-dark {
+    color: #A3ABB2;
+    transition: linear color 500ms;
+  }
+  
+  .icon-dark:hover {
+    color: #696d70;
+    transition: linear 250ms;
+  }
+  
+  .activeButton {
+    background-color: var(--secondary);
+  }

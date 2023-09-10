@@ -1,0 +1,31 @@
+<div class="mt-1">
+
+  <div class="flex flex-column" *ngFor="let item of itemData">
+    
+    <div class="flex flex-column mb-4 shadow-2 card-h">
+
+      <div class="border-round-top" style="background-color: var(--primary); height: 80%;" pTooltip="Clique para acessar o repositório no GitHub.">
+        <a href="{{item.linkHref}}" target="_blank">
+          <img class="w-full h-full border-round-top" src="{{item.imageUrl}}" alt="{{item.title}}">
+        </a>
+      </div>
+
+
+        <hr style="height: 1px; margin: 0 5px; background-color: var(--secondary);">
+
+
+      <div class="flex justify-content-between align-items-center border-round-bottom px-2" style="height: 25%; background-color: var(--primary);">
+        <p>{{item.title}}</p>
+        <div  style="display: flex; justify-content: end; gap: 4px;">
+          <button *ngFor="let technologies of item.technologiesUsed" class="border-round flex justify-content-center align-items-center" style="height: 40px; width: 40px; background-color: var(--button); color: white;" pTooltip="{{technologies}}" tooltipPosition="bottom">
+            <img src="{{getIconByName(technologies)}}" alt="{{technologies}}" style="height: 80%; ">
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  
+</div>
+
