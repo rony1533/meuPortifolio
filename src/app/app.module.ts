@@ -15,13 +15,11 @@ import { CardModule } from 'primeng/card';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { environment } from './environments/environment';
-
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { DataService } from './service/data.service';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ProfileFooterComponent } from './my-profile/profile-footer/profile-footer.component';
+import { ProfileFooterComponent } from './my-profile/profile-footer/profile-footer.component';import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from './environments/environment';
 
 @NgModule({
   declarations: [			
@@ -43,9 +41,8 @@ import { ProfileFooterComponent } from './my-profile/profile-footer/profile-foot
     CardModule,
     MultiSelectModule,
     BrowserAnimationsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideFirestore(() => getFirestore())
-    
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
