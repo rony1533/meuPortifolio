@@ -14,16 +14,14 @@ export class ProfilePortfolioComponent implements OnInit {
 
   constructor(private service: DataService) { }
 
-  ngOnInit() {
-    // this.service.getPortfolio().subscribe((res) => {
-    //   // res.map((item) => {
-    //   //   this.data.push(item);
-    //   //   this.itemData.push(item);
-    //   // });
+  async ngOnInit() {
+    (await this.service.getPortfolio()).subscribe((res) => {
+      res.map((item) => {
+        this.data.push(item);
+        this.itemData.push(item);
+      });
     
-    // console.log(res);
-    
-    // })
+    })
     
   }
 

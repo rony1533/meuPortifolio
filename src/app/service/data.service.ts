@@ -3,9 +3,11 @@ import { Portfolio } from "../my-profile/model/portifolio.model";
 import { AngularFirestore, DocumentData } from "@angular/fire/compat/firestore";
 import { Observable } from "rxjs";
 
-interface MyData extends DocumentData {
-    field1: string;
-    field2: number;
+interface Item extends DocumentData {
+    imageUrl: string;
+    linkHref: string;
+    technologiesUsed: Array<string>[];
+    title: string;
   }
 
 @Injectable({
@@ -13,18 +15,14 @@ interface MyData extends DocumentData {
 })
 export class DataService {
 
-    // constructor(private fs: AngularFirestore) { }
+    constructor(private fs: AngularFirestore) { }
 
-    // items: Observable<any[]> | undefined;
+    items: Observable<unknown[]> | undefined;
 
-    // getPortfolio() {
-    //     this.items= this.fs.collection('portifolios').valueChanges();
-    //     return this.items
-    // }
+    async getPortfolio() {
 
-    // addTest() {
-    //     let test = {test: 'oiii'};
-    //     let noteCollection = collection(this.fs,'teste');
-    //     return addDoc(noteCollection, test);
-    // }
+        this.items = this.fs.collection('portifolios').valueChanges();
+        return this.items
+    }
+
 }
