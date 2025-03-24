@@ -20,8 +20,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileFooterComponent } from './my-profile/profile-footer/profile-footer.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [			
@@ -44,7 +44,7 @@ import { environment } from '../environments/environment';
     MultiSelectModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFirestoreModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
