@@ -14,8 +14,8 @@ export class ProfilePortfolioComponent implements OnInit {
 
   constructor(private service: DataService) { }
 
-  async ngOnInit() {
-    (await this.service.getPortfolio()).subscribe((res) => {
+  ngOnInit() {
+    this.service.getPortfolio().subscribe((res) => {
       res.map((item) => {
         this.data.push(item);
         this.itemData.push(item);
