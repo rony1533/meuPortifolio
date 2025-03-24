@@ -22,6 +22,7 @@ import { ProfileFooterComponent } from './my-profile/profile-footer/profile-foot
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [			
@@ -44,7 +45,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     MultiSelectModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

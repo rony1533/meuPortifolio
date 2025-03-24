@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Auth } from '../service/auth.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -11,10 +13,11 @@ export class MyProfileComponent implements OnInit {
   isPortuguese: boolean = false;
 
   ngOnInit(): void {
+    this.authService.authenticateAnonymously()
     this.changeMode();
   }
 
-  constructor() { }
+  constructor(private authService: Auth) {}
 
   changeMode() {
     document.body.classList.toggle('dark-theme')
