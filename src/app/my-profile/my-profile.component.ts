@@ -12,12 +12,12 @@ export class MyProfileComponent implements OnInit {
   isLight: boolean = false;
   isPortuguese: boolean = false;
 
+  constructor(private authService: Auth) {}
+
   ngOnInit(): void {
-    this.authService.authenticateAnonymously()
+    this.authService.authenticateAnonymously();
     this.changeMode();
   }
-
-  constructor(private authService: Auth) {}
 
   changeMode() {
     document.body.classList.toggle('dark-theme')

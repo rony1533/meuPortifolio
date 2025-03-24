@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { getAuth, signInAnonymously } from 'firebase/auth';
 
 @Injectable({
     providedIn: 'root',
 })
 export class Auth {
 
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor() {}
 
   authenticateAnonymously() {
-    this.afAuth.signInAnonymously()
+    const auth = getAuth();
+    signInAnonymously(auth)
       .then((userCredential) => {
         console.log('Usuário autenticado anonimamente', userCredential.user);
       })

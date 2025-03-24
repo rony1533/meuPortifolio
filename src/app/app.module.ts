@@ -19,8 +19,11 @@ import { DataService } from './service/data.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileFooterComponent } from './my-profile/profile-footer/profile-footer.component';
 
-import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 

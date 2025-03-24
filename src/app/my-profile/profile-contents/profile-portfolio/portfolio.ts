@@ -15,13 +15,9 @@ export class ProfilePortfolioComponent implements OnInit {
   constructor(private service: DataService) { }
 
   ngOnInit() {
-    this.service.getPortfolio().subscribe((res) => {
-      res.map((item) => {
-        this.data.push(item);
-        this.itemData.push(item);
-      });
-    
-    })
+    var item = this.service.getPortfolio()
+    this.data.push(item);
+    this.itemData.push(item);
     
   }
 

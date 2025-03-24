@@ -1,16 +1,21 @@
 import { Injectable } from "@angular/core";
 import { Portfolio } from "../my-profile/model/portifolio.model";
-import { AngularFirestore } from "@angular/fire/compat/firestore";
-import { Observable } from "rxjs";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { environment } from "src/environments/environment";
+import { initializeApp } from "firebase/app";
 
 @Injectable({
     providedIn: 'root',
 })
 export class DataService {
+    private db = getFirestore(initializeApp(environment.firebaseConfig));
+    constructor() { }
 
-    constructor(private fs: AngularFirestore) { }
-
-    getPortfolio(): Observable<Portfolio[]> {
-        return this.fs.collection<Portfolio>('portifolios').valueChanges();
-    }
+    async getPortfolio() {
+        const portfolioCollection = collection(this.db, 'portifolios');
+        const snapshot = await getDocs(portfolioCollection);
+        const portfolioList = snapshot.docs.map(doc => doc.data());
+        console.log(portfolioList);
+        return portfolioList;
+      }
 }
