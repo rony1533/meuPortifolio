@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MockPortfolio } from '../dataMock/portfolioMock';
+// import { MockPortfolio } from '../dataMock/portfolioMock';
 
 @Component({
   selector: 'app-profile-facts',
@@ -18,7 +18,7 @@ export class ProfileFactsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.doneProject = MockPortfolio.length;
+    // this.doneProject = MockPortfolio.length;
     this.calculatedWorkExperience();
   }
 

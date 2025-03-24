@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Portfolio as Portfolio } from '../../model/portifolio.model';
+import { Portfolio as Portfolio, TechnologiesUsed } from '../../model/portifolio.model';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -9,24 +9,27 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class ProfilePortfolioComponent implements OnInit {
 
-  itemData: any[] = [];
-  data: any[] = [];
+  itemData: Portfolio[] = [];
+  // data: Portfolio[] = [];
 
   constructor(private service: DataService) { }
-
-  ngOnInit() {
-    var item = this.service.getPortfolio()
-    this.data.push(item);
-    this.itemData.push(item);
+  
+  ngOnInit(): void {
     
+    this.service.getPortfolio().then(portfolio => {
+
+      this.itemData.push(...portfolio); 
+    }).catch(error => {
+      console.error('Erro ao obter portfólio:', error);
+    });
   }
 
   getIconByName(name: string) {
+    
     return `../../../assets/icons/${name.toLowerCase()}.png`;
   }
 
   filterSelected(filters: String[]) {
-    this.test();
     
     // const dataFiltered = this.data.filter(item => {
     //   return item.technologiesUsed.some((tech: string) => filters.includes(tech.toLocaleLowerCase()))
@@ -37,11 +40,6 @@ export class ProfilePortfolioComponent implements OnInit {
     //   this.itemData.push(i);
     // })
 
-  }
-
-  test() {
-    console.log(this.itemData);
-    
   }
 
 }

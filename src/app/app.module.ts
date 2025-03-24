@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ProfileContentsComponent } from './my-profile/profile-contents/profile-contents.component';
-import { ProfilePortfolioComponent as ProfilePortfolioComponent } from './my-profile/profile-contents/profile-portfolio/portfolio';
+import { ProfilePortfolioComponent as ProfilePortfolioComponent } from './my-profile/profile-contents/profile-portfolio/profile-portfolio.component';
 import { ProfileDetailsComponent } from './my-profile/profile-details/profile-details.component';
 import { ProfileFactsComponent } from './my-profile/profile-facts/profile-facts.component';
 import { ProfileInfoComponent } from './my-profile/profile-info/profile-info.component';

@@ -11,11 +11,21 @@ export class DataService {
     private db = getFirestore(initializeApp(environment.firebaseConfig));
     constructor() { }
 
-    async getPortfolio() {
+    async getPortfolio(): Promise<Portfolio[]> {
         const portfolioCollection = collection(this.db, 'portifolios');
         const snapshot = await getDocs(portfolioCollection);
-        const portfolioList = snapshot.docs.map(doc => doc.data());
-        console.log(portfolioList);
-        return portfolioList;
+    // Mapeando os documentos para o tipo Portfolio
+    const portfolioList: Portfolio[] = snapshot.docs.map(doc => {
+        const data = doc.data();
+        return {
+          title: data["title"],
+          imageUrl: data["imageUrl"],
+          linkHref: data["linkHref"],
+          technologiesUsed: data["technologiesUsed"] || [] // Caso não haja o campo, retorna um array vazio
+        };
+      });
+  
+      console.log(portfolioList); // Exibindo o resultado no console
+      return portfolioList;
       }
 }

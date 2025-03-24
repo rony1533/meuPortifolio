@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SelectItemGroup } from 'primeng/api';
-import { ProfilePortfolioComponent } from './profile-portfolio/portfolio'; 
+import { ProfilePortfolioComponent } from './profile-portfolio/profile-portfolio.component'; 
 import { MockPortfolioFilter } from '../dataMock/portfolioFilterMock';
 import { DataService } from 'src/app/service/data.service';
 

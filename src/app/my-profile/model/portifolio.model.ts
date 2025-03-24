@@ -2,10 +2,10 @@ export interface Portfolio {
     title: string;
     imageUrl: string;
     linkHref: string;
-    technologiesUsed: TechnologiesUsed[]
+    technologiesUsed: Array<string>
 }
 
-interface TechnologiesUsed {
+export interface TechnologiesUsed {
     name: string;
     // icon: string;
 }
