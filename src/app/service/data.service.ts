@@ -8,9 +8,9 @@ import { Observable } from "rxjs";
 })
 export class DataService {
 
-    constructor(private fs: AngularFirestore) { }
+    // constructor(private fs: AngularFirestore) { }
 
-    getPortfolio(): Observable<Portfolio[]> {
-        return this.fs.collection<Portfolio>('portifolios').valueChanges();
-    }
+    // getPortfolio(): Observable<Portfolio[]> {
+    //     return this.fs.collection<Portfolio>('portifolios').valueChanges();
+    // }
 }
