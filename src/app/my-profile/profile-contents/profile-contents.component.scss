@@ -2,25 +2,44 @@
     height: 50px; 
     width: 154px; 
     border-radius: 10px;
-    color: white;
+    color: var(--text-title);
     background-color: var(--button);
     transition: background-color 250ms linear;
     cursor: pointer;
 }
 
 .btn-menu:disabled {
-    color: white;
-    background-color: rgb(71, 73, 84);
+    color: var(--text-title);
+    background-color: #474954;
 }
 
 .btn-menu:hover {
     background-color: #b1b1b1;
 }
 
-:host  ::ng-deep .p-multiselect {
+:host ::ng-deep .p-multiselect {
     background-color: var(--button) !important;
-    color: white;
+    color: var(--text-title);
     border: none;
     max-width: 200px;
     text-align: start;
-  } 
+
+    .p-multiselect-label-container {
+        width: 150px !important;
+    }
+} 
+
+:host ::ng-deep .p-multiselect-panel .p-multiselect-items {
+    background-color: var(--button) !important;
+
+    .p-multiselect-item-group {
+        background-color: #474954 !important;
+        color: var(--text-title);
+    }
+
+    .p-multiselect-item {
+
+        color: var(--text-title) !important;
+    }
+}
+

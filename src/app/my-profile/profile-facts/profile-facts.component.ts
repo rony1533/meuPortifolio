@@ -18,17 +18,24 @@ export class ProfileFactsComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.doneProject = MockPortfolio.length;
+    //TODO this.doneProject = MockPortfolio.length; 
     this.calculatedWorkExperience();
   }
 
   calculatedWorkExperience() {
-    const date = new Date();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const workExperience = (Number(date.getFullYear() + '' + month) - 202106).toString();
-
-    this.yearWork = `${workExperience.slice(0,1)}`; 
-    this.monthWork = `${Number(workExperience.slice(1,3))}`;
+    const startDate = new Date(2021, 5);
+    const currentDate = new Date();
+  
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+  
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+  
+    this.yearWork = years.toString();
+    this.monthWork = months.toString();
   }
 
 }

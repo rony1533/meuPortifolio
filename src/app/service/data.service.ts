@@ -14,18 +14,17 @@ export class DataService {
     async getPortfolio(): Promise<Portfolio[]> {
         const portfolioCollection = collection(this.db, 'portifolios');
         const snapshot = await getDocs(portfolioCollection);
-    // Mapeando os documentos para o tipo Portfolio
-    const portfolioList: Portfolio[] = snapshot.docs.map(doc => {
+
+      const portfolioList: Portfolio[] = snapshot.docs.map(doc => {
         const data = doc.data();
         return {
           title: data["title"],
           imageUrl: data["imageUrl"],
           linkHref: data["linkHref"],
-          technologiesUsed: data["technologiesUsed"] || [] // Caso não haja o campo, retorna um array vazio
+          technologiesUsed: data["technologiesUsed"] || []
         };
       });
   
-      console.log(portfolioList); // Exibindo o resultado no console
       return portfolioList;
-      }
+    }
 }

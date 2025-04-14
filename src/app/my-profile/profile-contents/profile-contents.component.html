@@ -2,7 +2,7 @@
 
   <h3>{{isPortuguese? 'Portfólio ': 'Portfolio'}}</h3>
 
-  <p-multiSelect [options]="groupedFilter" [virtualScrollItemSize]="1" (onChange)="selectedFilter($event)"  [group]="true"  defaultLabel="Filtrar" scrollHeight="250px" [showToggleAll]="false">
+  <p-multiSelect [options]="groupedFilter" [showHeader]="false" [virtualScrollItemSize]="1" (onChange)="selectedFilter($event)"  [group]="true"  defaultLabel="Filtrar" scrollHeight="250px" [showToggleAll]="false">
     <ng-template let-group pTemplate="group">
         <div class="flex align-items-center">
             <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'mr-2 flag flag-' + group.value" style="width: 20px" />
